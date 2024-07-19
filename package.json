@@ -1,0 +1,36 @@
+{
+  "name": "portifolio",
+  "version": "1.0.0",
+  "description": "\"this the portifolio of shubham kumar\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subhm08/React-portifolio.git"
+  },
+  "keywords": [
+    "shubham"
+  ],
+  "author": "shubham kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subhm08/React-portifolio/issues"
+  },
+  "homepage": "https://github.com/subhm08/React-portifolio#readme",
+  "dependencies": {
+    "bootstrap-icons": "^1.11.3",
+    "parcel": "^2.12.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "postcss": "^8.4.38",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.3"
+  }
+}
