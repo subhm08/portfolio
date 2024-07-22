@@ -2963,11 +2963,12 @@ var _mainBox = require("./src/MainBox");
 var _mainBoxDefault = parcelHelpers.interopDefault(_mainBox);
 var _navigation = require("./src/Navigation");
 var _navigationDefault = parcelHelpers.interopDefault(_navigation);
-var _contect = require("./src/component/contect");
+var _contect = require("./src/component/Contect");
+var _contectDefault = parcelHelpers.interopDefault(_contect);
 var _about = require("./src/component/About");
 var _aboutDefault = parcelHelpers.interopDefault(_about);
-var _resume = require("./src/component/Resume");
-var _resumeDefault = parcelHelpers.interopDefault(_resume);
+var _certification = require("./src/component/Certification");
+var _certificationDefault = parcelHelpers.interopDefault(_certification);
 var _projects = require("./src/component/Projects");
 var _s = $RefreshSig$();
 const App = ()=>{
@@ -2978,7 +2979,7 @@ const App = ()=>{
             lineNumber: 13,
             columnNumber: 3
         }, undefined),
-        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resumeDefault.default), {}, void 0, false, {
+        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _certificationDefault.default), {}, void 0, false, {
             fileName: "app.js",
             lineNumber: 14,
             columnNumber: 3
@@ -2988,7 +2989,7 @@ const App = ()=>{
             lineNumber: 15,
             columnNumber: 3
         }, undefined),
-        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contect.Contect), {}, void 0, false, {
+        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contectDefault.default), {}, void 0, false, {
             fileName: "app.js",
             lineNumber: 16,
             columnNumber: 3
@@ -3043,7 +3044,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/SideInfo":"iZp3p","./src/MainBox":"bUq1A","./src/Navigation":"7UCOA","./src/component/contect":"cJOid","./src/component/About":"94Koj","./src/component/Resume":"4LSMq","./src/component/Projects":"cAUJO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/SideInfo":"iZp3p","./src/MainBox":"bUq1A","./src/Navigation":"7UCOA","./src/component/Contect":"hdWBc","./src/component/About":"94Koj","./src/component/Certification":"4xhIl","./src/component/Projects":"cAUJO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27537,7 +27538,7 @@ const SideInfo = ()=>{
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
                                 className: "bg-slate-800 hover:bg-slate-900 rounded-lg font-semibold text-slate-100 py-1 px-2",
-                                href: "/images/myw3schoolsimage.jpg",
+                                href: "https://drive.google.com/file/d/1r5kjSowfGpJUO-izwmxzR23dZGNI0yb0/view?usp=sharing",
                                 download: true,
                                 children: [
                                     "Download CV",
@@ -27546,7 +27547,7 @@ const SideInfo = ()=>{
                                     }, void 0, false, {
                                         fileName: "src/SideInfo.js",
                                         lineNumber: 58,
-                                        columnNumber: 178
+                                        columnNumber: 232
                                     }, undefined)
                                 ]
                             }, void 0, true, {
@@ -27837,11 +27838,12 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _contect = require("./component/contect");
+var _contect = require("./component/Contect");
+var _contectDefault = parcelHelpers.interopDefault(_contect);
 var _about = require("./component/About");
 var _aboutDefault = parcelHelpers.interopDefault(_about);
-var _resume = require("./component/Resume");
-var _resumeDefault = parcelHelpers.interopDefault(_resume);
+var _certification = require("./component/Certification");
+var _certificationDefault = parcelHelpers.interopDefault(_certification);
 var _projects = require("./component/Projects");
 const Navigation = ({ onSelectPage })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27871,7 +27873,7 @@ const Navigation = ({ onSelectPage })=>{
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 className: " bg-white rounded-lg p-2 text-sm font-semibold w-full ",
-                onClick: ()=>onSelectPage(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resumeDefault.default), {}, void 0, false, {
+                onClick: ()=>onSelectPage(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _certificationDefault.default), {}, void 0, false, {
                         fileName: "src/Navigation.js",
                         lineNumber: 15,
                         columnNumber: 118
@@ -27884,7 +27886,7 @@ const Navigation = ({ onSelectPage })=>{
                         lineNumber: 16,
                         columnNumber: 17
                     }, undefined),
-                    "Resume"
+                    "Certification"
                 ]
             }, void 0, true, {
                 fileName: "src/Navigation.js",
@@ -27915,7 +27917,7 @@ const Navigation = ({ onSelectPage })=>{
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 className: " bg-white rounded-lg p-2 text-sm font-semibold w-full ",
-                onClick: ()=>onSelectPage(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contect.Contect), {}, void 0, false, {
+                onClick: ()=>onSelectPage(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contectDefault.default), {}, void 0, false, {
                         fileName: "src/Navigation.js",
                         lineNumber: 23,
                         columnNumber: 118
@@ -27952,38 +27954,154 @@ $RefreshReg$(_c, "Navigation");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./component/contect":"cJOid","./component/About":"94Koj","./component/Resume":"4LSMq","./component/Projects":"cAUJO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cJOid":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$d66b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./component/Contect":"hdWBc","./component/About":"94Koj","./component/Certification":"4xhIl","./component/Projects":"cAUJO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hdWBc":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$dad1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$d66b.prelude(module);
+$parcel$ReactRefreshHelpers$dad1.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Contect", ()=>Contect);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 const Contect = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "ContecC"
-    }, void 0, false, {
-        fileName: "src/component/contect.js",
-        lineNumber: 5,
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "text-3xl font-mono font-bold text-slate-600",
+                children: "Contect Me"
+            }, void 0, false, {
+                fileName: "src/component/Contect.js",
+                lineNumber: 5,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                fileName: "src/component/Contect.js",
+                lineNumber: 6,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "box flex flex-col gap-2 justify-center items-start bg-slate-300 p-3 rounded-lg",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "namebox flex justify-between ",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                htmlFor: "name",
+                                children: "Full-Name"
+                            }, void 0, false, {
+                                fileName: "src/component/Contect.js",
+                                lineNumber: 10,
+                                columnNumber: 9
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "text",
+                                name: "name",
+                                id: "name"
+                            }, void 0, false, {
+                                fileName: "src/component/Contect.js",
+                                lineNumber: 11,
+                                columnNumber: 9
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/component/Contect.js",
+                        lineNumber: 9,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "emailbox",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                htmlFor: "email",
+                                children: "Email"
+                            }, void 0, false, {
+                                fileName: "src/component/Contect.js",
+                                lineNumber: 15,
+                                columnNumber: 9
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "email",
+                                name: "email",
+                                id: "email"
+                            }, void 0, false, {
+                                fileName: "src/component/Contect.js",
+                                lineNumber: 16,
+                                columnNumber: 9
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/component/Contect.js",
+                        lineNumber: 14,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "msgbox",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                htmlFor: "msg",
+                                children: "Message"
+                            }, void 0, false, {
+                                fileName: "src/component/Contect.js",
+                                lineNumber: 20,
+                                columnNumber: 9
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
+                                name: "msg",
+                                id: "msg"
+                            }, void 0, false, {
+                                fileName: "src/component/Contect.js",
+                                lineNumber: 21,
+                                columnNumber: 9
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/component/Contect.js",
+                        lineNumber: 19,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        type: "submit",
+                        children: "Message Me"
+                    }, void 0, false, {
+                        fileName: "src/component/Contect.js",
+                        lineNumber: 26,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "social",
+                        children: "links"
+                    }, void 0, false, {
+                        fileName: "src/component/Contect.js",
+                        lineNumber: 28,
+                        columnNumber: 7
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Contect.js",
+                lineNumber: 7,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/Contect.js",
+        lineNumber: 4,
         columnNumber: 5
     }, undefined);
 };
 _c = Contect;
+exports.default = Contect;
 var _c;
 $RefreshReg$(_c, "Contect");
 
-  $parcel$ReactRefreshHelpers$d66b.postlude(module);
+  $parcel$ReactRefreshHelpers$dad1.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"94Koj":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj"}],"94Koj":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$77f7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28230,11 +28348,11 @@ $RefreshReg$(_c1, "About");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4LSMq":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e2d7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4xhIl":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$568d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e2d7.prelude(module);
+$parcel$ReactRefreshHelpers$568d.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -28242,32 +28360,164 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-const Resume = ()=>{
+var _cJpg = require("../../image/C.jpg");
+var _cJpgDefault = parcelHelpers.interopDefault(_cJpg);
+function CertificationCard(props) {
+    const { color, preview, title, company, date, cid, link } = props;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: `card mt-2 rounded-lg p-2 ${color}`,
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "img",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: (0, _cJpgDefault.default),
+                    alt: "title"
+                }, void 0, false, {
+                    fileName: "src/component/Certification.js",
+                    lineNumber: 8,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "src/component/Certification.js",
+                lineNumber: 7,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                className: "text-gray-800 font-serif tracking-wider text-md font-bold mt-2 hover:underline",
+                children: "Title"
+            }, void 0, false, {
+                fileName: "src/component/Certification.js",
+                lineNumber: 10,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                className: "company text-gray-600 font-serif tracking-wide text-sm",
+                children: "Company"
+            }, void 0, false, {
+                fileName: "src/component/Certification.js",
+                lineNumber: 11,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "date text-gray-600 font-serif tracking-widest text-xs",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                        children: "Issue date: "
+                    }, void 0, false, {
+                        fileName: "src/component/Certification.js",
+                        lineNumber: 12,
+                        columnNumber: 76
+                    }, this),
+                    "date"
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Certification.js",
+                lineNumber: 12,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "c_id text-gray-600 font-serif tracking-wide text-xs ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                        children: "Creditional Id: "
+                    }, void 0, false, {
+                        fileName: "src/component/Certification.js",
+                        lineNumber: 13,
+                        columnNumber: 75
+                    }, this),
+                    "Creditional"
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Certification.js",
+                lineNumber: 13,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: "show mt-1 bg-slate-600 text-white rounded-lg p-1 text-xs font-semibold hover:underline hover:scale-105 transition-all",
+                children: [
+                    "Show Creditional",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                        class: "p-1  align-top text-xs font-thin bi bi-box-arrow-up-right"
+                    }, void 0, false, {
+                        fileName: "src/component/Certification.js",
+                        lineNumber: 14,
+                        columnNumber: 161
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Certification.js",
+                lineNumber: 14,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/Certification.js",
+        lineNumber: 6,
+        columnNumber: 5
+    }, this);
+}
+_c = CertificationCard;
+const Certification = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "page"
-        }, void 0, false, {
-            fileName: "src/component/Resume.js",
-            lineNumber: 6,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/component/Resume.js",
-        lineNumber: 5,
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "text-3xl font-mono font-bold text-slate-600",
+                children: "Certifications"
+            }, void 0, false, {
+                fileName: "src/component/Certification.js",
+                lineNumber: 21,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                fileName: "src/component/Certification.js",
+                lineNumber: 22,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "mt-2 grid gap-2 grid-cols-2 ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(CertificationCard, {
+                        color: "bg-orange-50"
+                    }, void 0, false, {
+                        fileName: "src/component/Certification.js",
+                        lineNumber: 24,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(CertificationCard, {
+                        color: "bg-yellow-50"
+                    }, void 0, false, {
+                        fileName: "src/component/Certification.js",
+                        lineNumber: 25,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Certification.js",
+                lineNumber: 23,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/Certification.js",
+        lineNumber: 20,
         columnNumber: 5
     }, undefined);
 };
-_c = Resume;
-exports.default = Resume;
-var _c;
-$RefreshReg$(_c, "Resume");
+_c1 = Certification;
+exports.default = Certification;
+var _c, _c1;
+$RefreshReg$(_c, "CertificationCard");
+$RefreshReg$(_c1, "Certification");
 
-  $parcel$ReactRefreshHelpers$e2d7.postlude(module);
+  $parcel$ReactRefreshHelpers$568d.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cAUJO":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../image/C.jpg":"kd73f"}],"kd73f":[function(require,module,exports) {
+module.exports = require("27513e62cb4b64f").getBundleURL("1G2bZ") + "C.60597a09.jpg" + "?" + Date.now();
+
+},{"27513e62cb4b64f":"lgJ39"}],"cAUJO":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4f34 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28280,6 +28530,9 @@ parcelHelpers.export(exports, "Projects", ()=>Projects);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+const openInNewTab = (url)=>{
+    window.open(url, "_blank", "noreferrer");
+};
 const ProjectCard = (props)=>{
     const { color, name, duration, liveLink, repo, discription, techstack } = props;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Fragment), {
@@ -28294,31 +28547,31 @@ const ProjectCard = (props)=>{
                             children: name
                         }, void 0, false, {
                             fileName: "src/component/Projects.js",
-                            lineNumber: 8,
+                            lineNumber: 11,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                            className: "underline hover:text-gray-700 text-gray-500 font-serif tracking-wider text-sm font-bold mt-2",
-                            href: `${liveLink}`,
+                            className: "underline hover:text-gray-700 text-gray-500 font-serif tracking-wider text-sm font-bold mt-2 cursor-pointer",
+                            onClick: ()=>openInNewTab(liveLink),
                             children: [
                                 "live Preview",
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
                                     class: "p-1  align-top text-xs font-thin bi bi-box-arrow-up-right"
                                 }, void 0, false, {
                                     fileName: "src/component/Projects.js",
-                                    lineNumber: 10,
-                                    columnNumber: 154
+                                    lineNumber: 13,
+                                    columnNumber: 186
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/component/Projects.js",
-                            lineNumber: 10,
+                            lineNumber: 13,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/component/Projects.js",
-                    lineNumber: 7,
+                    lineNumber: 10,
                     columnNumber: 11
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28329,16 +28582,16 @@ const ProjectCard = (props)=>{
                             children: duration
                         }, void 0, false, {
                             fileName: "src/component/Projects.js",
-                            lineNumber: 14,
+                            lineNumber: 17,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                            href: `${repo}`,
-                            className: "underline italic hover:text-gray-700 text-gray-600 font-serif tracking-wide text-xs font-bold",
+                            onClick: ()=>openInNewTab(repo),
+                            className: "underline italic hover:text-gray-700 text-gray-600 font-serif tracking-wide text-xs font-bold cursor-pointer",
                             children: repo
                         }, void 0, false, {
                             fileName: "src/component/Projects.js",
-                            lineNumber: 16,
+                            lineNumber: 19,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -28346,7 +28599,7 @@ const ProjectCard = (props)=>{
                             children: "Technology Used:"
                         }, void 0, false, {
                             fileName: "src/component/Projects.js",
-                            lineNumber: 18,
+                            lineNumber: 21,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -28354,7 +28607,7 @@ const ProjectCard = (props)=>{
                             children: techstack.join(" || ")
                         }, void 0, false, {
                             fileName: "src/component/Projects.js",
-                            lineNumber: 19,
+                            lineNumber: 22,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -28362,24 +28615,24 @@ const ProjectCard = (props)=>{
                             children: discription
                         }, void 0, false, {
                             fileName: "src/component/Projects.js",
-                            lineNumber: 21,
+                            lineNumber: 24,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/component/Projects.js",
-                    lineNumber: 13,
+                    lineNumber: 16,
                     columnNumber: 11
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/component/Projects.js",
-            lineNumber: 6,
+            lineNumber: 9,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/component/Projects.js",
-        lineNumber: 5,
+        lineNumber: 8,
         columnNumber: 5
     }, undefined);
 };
@@ -28392,22 +28645,22 @@ const Projects = ()=>{
                 children: "Projects"
             }, void 0, false, {
                 fileName: "src/component/Projects.js",
-                lineNumber: 30,
+                lineNumber: 33,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {
                 className: "bg-slate-400 h-2"
             }, void 0, false, {
                 fileName: "src/component/Projects.js",
-                lineNumber: 31,
+                lineNumber: 34,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ProjectCard, {
                 color: "bg-yellow-50",
                 name: "Swiggy Clone",
-                liveLink: "google.com",
+                liveLink: "https://google.com",
                 duration: "Aprail 2023 - june 2023",
-                repo: "google.com",
+                repo: "https://google.com",
                 techstack: [
                     "HTML",
                     "CSS",
@@ -28419,13 +28672,13 @@ const Projects = ()=>{
                 discription: "swiggy clone example"
             }, void 0, false, {
                 fileName: "src/component/Projects.js",
-                lineNumber: 33,
+                lineNumber: 36,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Projects.js",
-        lineNumber: 29,
+        lineNumber: 32,
         columnNumber: 5
     }, undefined);
 };

@@ -55,7 +55,7 @@ const SideInfo = () => {
 
                     </div>
                     <div>
-                        <a className="bg-slate-800 hover:bg-slate-900 rounded-lg font-semibold text-slate-100 py-1 px-2" href="/images/myw3schoolsimage.jpg" download>Download CV<i class=" p-1 bi bi-download"></i></a>
+                        <a className="bg-slate-800 hover:bg-slate-900 rounded-lg font-semibold text-slate-100 py-1 px-2" href="https://drive.google.com/file/d/1r5kjSowfGpJUO-izwmxzR23dZGNI0yb0/view?usp=sharing" download>Download CV<i class=" p-1 bi bi-download"></i></a>
                     </div>
                 </div>
             </div>

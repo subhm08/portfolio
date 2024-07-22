@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom/client'
 import SideInfo from './src/SideInfo'
 import MainBox from './src/MainBox'
 import Navigation from './src/Navigation'
-import { Contect } from './src/component/contect'
+import Contect  from './src/component/Contect'
 import About from './src/component/About'
-import Resume from './src/component/Resume'
+import Certification from './src/component/Certification'
 import { Projects } from './src/component/Projects'
 
 const App = () => {
   const components=[
   <About />,
-  <Resume />,
+  <Certification />,
   <Projects />,
   <Contect /> ];
 

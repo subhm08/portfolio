@@ -2,9 +2,12 @@
   "name": "portifolio",
   "version": "1.0.0",
   "description": "\"this the portifolio of shubham kumar\"",
-  "main": "index.js",
+  "homepage": "https://github.com/subhm08/React-portifolio#readme",
   "scripts": {
     "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "test": "jest"
   },
   "repository": {
@@ -19,13 +22,14 @@
   "bugs": {
     "url": "https://github.com/subhm08/React-portifolio/issues"
   },
-  "homepage": "https://github.com/subhm08/React-portifolio#readme",
   "dependencies": {
+    "@microlink/react": "^5.5.22",
     "bootstrap-icons": "^1.11.3",
     "parcel": "^2.12.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.23.1"
+    "react-router-dom": "^6.23.1",
+    "url": "^0.11.3"
   },
   "devDependencies": {
     "gh-pages": "^6.1.1",

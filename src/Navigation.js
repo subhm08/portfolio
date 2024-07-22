@@ -1,7 +1,7 @@
 import React from "react";
-import { Contect } from './component/contect'
+import  Contect  from './component/Contect'
 import About from './component/About'
-import Resume from './component/Resume'
+import Resume from './component/Certification'
 import { Projects } from './component/Projects'
 
 const Navigation = ({onSelectPage}) => {
@@ -14,7 +14,7 @@ const Navigation = ({onSelectPage}) => {
                 </button>
                 <button className=" bg-white rounded-lg p-2 text-sm font-semibold w-full " onClick={()=>onSelectPage(<Resume/>)}>
                 <i className="bi bi-file-earmark-person-fill text-xl block"/>
-                Resume
+                Certification
                 </button>
                 <button className=" bg-white rounded-lg p-2 text-sm font-semibold w-full " onClick={()=>onSelectPage(<Projects/>)}>
                 <i className="bi bi-file-earmark-code text-xl block"/>
