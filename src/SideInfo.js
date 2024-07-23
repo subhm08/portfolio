@@ -2,6 +2,9 @@ import React, { Fragment } from "react";
 
 import img from '../image/Photo.jpg';
 export const Social = ()=>{
+    const openInNewTab = (url) => {
+        window.open(url, "_blank", "noreferrer");
+      };
     return(
         <div className="flex gap-1">
                         
@@ -18,9 +21,7 @@ export const Social = ()=>{
 } 
 
 const SideInfo = () => {
-    const openInNewTab = (url) => {
-        window.open(url, "_blank", "noreferrer");
-      };
+    
     return (
         <div>
             <div className=" bg-gray-200 nav ml-12 mt-24 px-7 flex flex-col items-center h-[calc(100vh-12rem)] rounded-xl">

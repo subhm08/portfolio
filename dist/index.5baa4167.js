@@ -3044,7 +3044,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","react":"21dqq","react-dom/client":"lOjBx","./src/SideInfo":"iZp3p","./src/MainBox":"bUq1A","./src/Navigation":"7UCOA","./src/component/Contect":"hdWBc","./src/component/About":"94Koj","./src/component/Certification":"4xhIl","./src/component/Projects":"cAUJO"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/SideInfo":"iZp3p","./src/MainBox":"bUq1A","./src/Navigation":"7UCOA","./src/component/Contect":"hdWBc","./src/component/About":"94Koj","./src/component/Certification":"4xhIl","./src/component/Projects":"cAUJO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -5762,174 +5762,6 @@ module.exports = require("a569817e6ea559f6");
     exports.version = ReactVersion;
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
-
-},{}],"km3Ru":[function(require,module,exports) {
-"use strict";
-var Refresh = require("7422ead32dcc1e6b");
-function debounce(func, delay) {
-    {
-        let timeout = undefined;
-        let lastTime = 0;
-        return function(args) {
-            // Call immediately if last call was more than the delay ago.
-            // Otherwise, set a timeout. This means the first call is fast
-            // (for the common case of a single update), and subsequent updates
-            // are batched.
-            let now = Date.now();
-            if (now - lastTime > delay) {
-                lastTime = now;
-                func.call(null, args);
-            } else {
-                clearTimeout(timeout);
-                timeout = setTimeout(function() {
-                    timeout = undefined;
-                    lastTime = Date.now();
-                    func.call(null, args);
-                }, delay);
-            }
-        };
-    }
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30);
-// Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module1) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module1.id + " " + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module1) {
-    if (isReactRefreshBoundary(module1.exports)) {
-        registerExportsForReactRefresh(module1);
-        if (module1.hot) {
-            module1.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module1.exports;
-            });
-            module1.hot.accept(function(getParents) {
-                var prevExports = module1.hot.data.prevExports;
-                var nextExports = module1.exports;
-                // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
-                // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-}
-// When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module1) {
-    var exports = module1.exports, id = module1.id;
-    Refresh.register(exports, id + " %exports%");
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        var typeID = id + " %exports% " + key;
-        Refresh.register(exportValue, typeID);
-    }
-}
-
-},{"7422ead32dcc1e6b":"786KC"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
 
 },{}],"lOjBx":[function(require,module,exports) {
 "use strict";
@@ -27471,6 +27303,9 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _photoJpg = require("../image/Photo.jpg");
 var _photoJpgDefault = parcelHelpers.interopDefault(_photoJpg);
 const Social = ()=>{
+    const openInNewTab = (url)=>{
+        window.open(url, "_blank", "noreferrer");
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex gap-1",
         children: [
@@ -27479,7 +27314,7 @@ const Social = ()=>{
                 className: "bi bi-facebook cursor-pointer bg-white m-1 rounded-md px-2 py-1"
             }, void 0, false, {
                 fileName: "src/SideInfo.js",
-                lineNumber: 8,
+                lineNumber: 11,
                 columnNumber: 25
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
@@ -27487,7 +27322,7 @@ const Social = ()=>{
                 className: "bi bi-linkedin cursor-pointer bg-white m-1 rounded-md px-2 py-1"
             }, void 0, false, {
                 fileName: "src/SideInfo.js",
-                lineNumber: 10,
+                lineNumber: 13,
                 columnNumber: 25
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
@@ -27495,7 +27330,7 @@ const Social = ()=>{
                 className: "bi bi-github cursor-pointer bg-white m-1 rounded-md px-2 py-1"
             }, void 0, false, {
                 fileName: "src/SideInfo.js",
-                lineNumber: 12,
+                lineNumber: 15,
                 columnNumber: 25
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
@@ -27503,21 +27338,18 @@ const Social = ()=>{
                 className: "bi bi-twitter-x cursor-pointer bg-white m-1 rounded-md px-2 py-1"
             }, void 0, false, {
                 fileName: "src/SideInfo.js",
-                lineNumber: 14,
+                lineNumber: 17,
                 columnNumber: 25
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/SideInfo.js",
-        lineNumber: 6,
+        lineNumber: 9,
         columnNumber: 9
     }, undefined);
 };
 _c = Social;
 const SideInfo = ()=>{
-    const openInNewTab1 = (url)=>{
-        window.open(url, "_blank", "noreferrer");
-    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: " bg-gray-200 nav ml-12 mt-24 px-7 flex flex-col items-center h-[calc(100vh-12rem)] rounded-xl",
@@ -27530,12 +27362,12 @@ const SideInfo = ()=>{
                         alt: "profile"
                     }, void 0, false, {
                         fileName: "src/SideInfo.js",
-                        lineNumber: 28,
+                        lineNumber: 29,
                         columnNumber: 21
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/SideInfo.js",
-                    lineNumber: 27,
+                    lineNumber: 28,
                     columnNumber: 13
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27546,7 +27378,7 @@ const SideInfo = ()=>{
                             children: "Shubham kumar"
                         }, void 0, false, {
                             fileName: "src/SideInfo.js",
-                            lineNumber: 31,
+                            lineNumber: 32,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27554,12 +27386,12 @@ const SideInfo = ()=>{
                             children: "Frontend Developer"
                         }, void 0, false, {
                             fileName: "src/SideInfo.js",
-                            lineNumber: 32,
+                            lineNumber: 33,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Social, {}, void 0, false, {
                             fileName: "src/SideInfo.js",
-                            lineNumber: 33,
+                            lineNumber: 34,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27574,12 +27406,12 @@ const SideInfo = ()=>{
                                                 className: "bi bi-phone self-start"
                                             }, void 0, false, {
                                                 fileName: "src/SideInfo.js",
-                                                lineNumber: 39,
+                                                lineNumber: 40,
                                                 columnNumber: 71
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/SideInfo.js",
-                                            lineNumber: 39,
+                                            lineNumber: 40,
                                             columnNumber: 29
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -27589,7 +27421,7 @@ const SideInfo = ()=>{
                                                     children: " Phone"
                                                 }, void 0, false, {
                                                     fileName: "src/SideInfo.js",
-                                                    lineNumber: 41,
+                                                    lineNumber: 42,
                                                     columnNumber: 33
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27597,19 +27429,19 @@ const SideInfo = ()=>{
                                                     children: "7254050024"
                                                 }, void 0, false, {
                                                     fileName: "src/SideInfo.js",
-                                                    lineNumber: 42,
+                                                    lineNumber: 43,
                                                     columnNumber: 33
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/SideInfo.js",
-                                            lineNumber: 40,
+                                            lineNumber: 41,
                                             columnNumber: 29
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/SideInfo.js",
-                                    lineNumber: 38,
+                                    lineNumber: 39,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27621,12 +27453,12 @@ const SideInfo = ()=>{
                                                 className: "bi bi-envelope self-start"
                                             }, void 0, false, {
                                                 fileName: "src/SideInfo.js",
-                                                lineNumber: 47,
+                                                lineNumber: 48,
                                                 columnNumber: 71
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/SideInfo.js",
-                                            lineNumber: 47,
+                                            lineNumber: 48,
                                             columnNumber: 29
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -27636,7 +27468,7 @@ const SideInfo = ()=>{
                                                     children: "Email"
                                                 }, void 0, false, {
                                                     fileName: "src/SideInfo.js",
-                                                    lineNumber: 49,
+                                                    lineNumber: 50,
                                                     columnNumber: 33
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27644,19 +27476,19 @@ const SideInfo = ()=>{
                                                     children: "Krsubam4u@gmail.com"
                                                 }, void 0, false, {
                                                     fileName: "src/SideInfo.js",
-                                                    lineNumber: 50,
+                                                    lineNumber: 51,
                                                     columnNumber: 33
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/SideInfo.js",
-                                            lineNumber: 48,
+                                            lineNumber: 49,
                                             columnNumber: 29
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/SideInfo.js",
-                                    lineNumber: 46,
+                                    lineNumber: 47,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27668,12 +27500,12 @@ const SideInfo = ()=>{
                                                 className: "bi bi-geo-alt self-start"
                                             }, void 0, false, {
                                                 fileName: "src/SideInfo.js",
-                                                lineNumber: 55,
+                                                lineNumber: 56,
                                                 columnNumber: 71
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/SideInfo.js",
-                                            lineNumber: 55,
+                                            lineNumber: 56,
                                             columnNumber: 29
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -27683,7 +27515,7 @@ const SideInfo = ()=>{
                                                     children: "Location"
                                                 }, void 0, false, {
                                                     fileName: "src/SideInfo.js",
-                                                    lineNumber: 57,
+                                                    lineNumber: 58,
                                                     columnNumber: 33
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27691,25 +27523,25 @@ const SideInfo = ()=>{
                                                     children: "Patna, Bihar IN"
                                                 }, void 0, false, {
                                                     fileName: "src/SideInfo.js",
-                                                    lineNumber: 58,
+                                                    lineNumber: 59,
                                                     columnNumber: 33
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/SideInfo.js",
-                                            lineNumber: 56,
+                                            lineNumber: 57,
                                             columnNumber: 29
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/SideInfo.js",
-                                    lineNumber: 54,
+                                    lineNumber: 55,
                                     columnNumber: 25
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/SideInfo.js",
-                            lineNumber: 36,
+                            lineNumber: 37,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27723,35 +27555,35 @@ const SideInfo = ()=>{
                                         class: " p-1 bi bi-download"
                                     }, void 0, false, {
                                         fileName: "src/SideInfo.js",
-                                        lineNumber: 64,
+                                        lineNumber: 65,
                                         columnNumber: 232
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/SideInfo.js",
-                                lineNumber: 64,
+                                lineNumber: 65,
                                 columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/SideInfo.js",
-                            lineNumber: 63,
+                            lineNumber: 64,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/SideInfo.js",
-                    lineNumber: 30,
+                    lineNumber: 31,
                     columnNumber: 17
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/SideInfo.js",
-            lineNumber: 26,
+            lineNumber: 27,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/SideInfo.js",
-        lineNumber: 25,
+        lineNumber: 26,
         columnNumber: 9
     }, undefined);
 };
@@ -27804,7 +27636,175 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"bUq1A":[function(require,module,exports) {
+},{}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"km3Ru":[function(require,module,exports) {
+"use strict";
+var Refresh = require("7422ead32dcc1e6b");
+function debounce(func, delay) {
+    {
+        let timeout = undefined;
+        let lastTime = 0;
+        return function(args) {
+            // Call immediately if last call was more than the delay ago.
+            // Otherwise, set a timeout. This means the first call is fast
+            // (for the common case of a single update), and subsequent updates
+            // are batched.
+            let now = Date.now();
+            if (now - lastTime > delay) {
+                lastTime = now;
+                func.call(null, args);
+            } else {
+                clearTimeout(timeout);
+                timeout = setTimeout(function() {
+                    timeout = undefined;
+                    lastTime = Date.now();
+                    func.call(null, args);
+                }, delay);
+            }
+        };
+    }
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30);
+// Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module1) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module1.id + " " + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module1) {
+    if (isReactRefreshBoundary(module1.exports)) {
+        registerExportsForReactRefresh(module1);
+        if (module1.hot) {
+            module1.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module1.exports;
+            });
+            module1.hot.accept(function(getParents) {
+                var prevExports = module1.hot.data.prevExports;
+                var nextExports = module1.exports;
+                // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
+                // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+}
+// When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module1) {
+    var exports = module1.exports, id = module1.id;
+    Refresh.register(exports, id + " %exports%");
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        var typeID = id + " %exports% " + key;
+        Refresh.register(exportValue, typeID);
+    }
+}
+
+},{"7422ead32dcc1e6b":"786KC"}],"bUq1A":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$d063 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28117,7 +28117,7 @@ $RefreshReg$(_c, "Contact");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","react/jsx-dev-runtime":"iTorj","react":"21dqq","@emailjs/browser":"kbSqr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../SideInfo":"iZp3p"}],"kbSqr":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@emailjs/browser":"kbSqr","../SideInfo":"iZp3p","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kbSqr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "init", ()=>(0, _init.init));
@@ -28919,7 +28919,10 @@ $RefreshReg$(_c1, "Certification");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../image/java.png":"iCOuW","../../image/sql.png":"hlb1j","../../image/javascript.png":"lVqSe","../../image/internsala.jpeg":"jFS34","../../image/C.png":"j2Ywn","../../image/python.png":"5gGPW"}],"iCOuW":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../image/C.png":"j2Ywn","../../image/java.png":"iCOuW","../../image/sql.png":"hlb1j","../../image/javascript.png":"lVqSe","../../image/internsala.jpeg":"jFS34","../../image/python.png":"5gGPW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"j2Ywn":[function(require,module,exports) {
+module.exports = require("d533dd1f7289134f").getBundleURL("1G2bZ") + "C.41eb2d02.png" + "?" + Date.now();
+
+},{"d533dd1f7289134f":"lgJ39"}],"iCOuW":[function(require,module,exports) {
 module.exports = require("d480a57c22d56cce").getBundleURL("1G2bZ") + "java.55f46265.png" + "?" + Date.now();
 
 },{"d480a57c22d56cce":"lgJ39"}],"hlb1j":[function(require,module,exports) {
@@ -28931,10 +28934,7 @@ module.exports = require("ab37e12f808108b5").getBundleURL("1G2bZ") + "javascript
 },{"ab37e12f808108b5":"lgJ39"}],"jFS34":[function(require,module,exports) {
 module.exports = require("b13c1b5a25bb6da1").getBundleURL("1G2bZ") + "internsala.a77d72cd.jpeg" + "?" + Date.now();
 
-},{"b13c1b5a25bb6da1":"lgJ39"}],"j2Ywn":[function(require,module,exports) {
-module.exports = require("d533dd1f7289134f").getBundleURL("1G2bZ") + "C.41eb2d02.png" + "?" + Date.now();
-
-},{"d533dd1f7289134f":"lgJ39"}],"5gGPW":[function(require,module,exports) {
+},{"b13c1b5a25bb6da1":"lgJ39"}],"5gGPW":[function(require,module,exports) {
 module.exports = require("8013b64e151a2a16").getBundleURL("1G2bZ") + "python.3a515219.png" + "?" + Date.now();
 
 },{"8013b64e151a2a16":"lgJ39"}],"cAUJO":[function(require,module,exports) {
