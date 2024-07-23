@@ -33,7 +33,11 @@ export const Projects = () => {
       <h1 className='text-3xl font-mono font-bold text-slate-600'>Projects</h1>
       <hr className='bg-slate-400 h-2' />
 
-      <ProjectCard color="bg-yellow-50" name="Swiggy Clone" liveLink="https://google.com" duration="Aprail 2023 - june 2023" repo="https://google.com" techstack={["HTML", "CSS","JavaScript", "ReactJS", "API", "TailwindCSS"]} discription="swiggy clone example"/>
+      <ProjectCard color="bg-yellow-50" name="Personal Portfolio" liveLink="https://portfolio-two-inky-64.vercel.app/" duration="june 2024 - july 2024" repo="https://github.com/subhm08/portfolio" techstack={["HTML", "CSS","JavaScript", "ReactJS", "EmailJS", "TailwindCSS"]} discription="My personal portfolio for showcase my skills that describe my skills, achivement and works done by me."/>
+
+      <ProjectCard color="bg-green-50" name="Swiggy clone" liveLink="https://swiggy-clone-sandy.vercel.app/" duration="may 2024 -  present" repo="https://github.com/subhm08/SwiggyClone" techstack={["HTML", "CSS","JavaScript", "ReactJS", "API", "TailwindCSS"]} discription="Food ordering app swiggy frontend design with live API of swiggy."/>
+
+      
     </div>
   )
 }
