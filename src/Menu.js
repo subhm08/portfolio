@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Navigation = () => {
+const Navigation = ({handleNavClick}) => {
+    const[isMenuVisible, setMenuVisible]=useState(false);
     return (
         <div className="fixed  top-4 bg-stone-300/55 backdrop-blur-sm right-2 pt-10 z-10 navigation flex flex-col h-auto w-1/2 rounded-xl  gap-2 p-3 ">
             <Link to="/"><a

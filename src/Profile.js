@@ -25,7 +25,7 @@ const SideInfo = () => {
     side = document.getElementById("sideInfo");
     return (
         <>
-            <div className= "fixed z-10 py-2 top-4 bg-stone-300/55 backdrop-blur-sm flex flex-col items-center justify-start h-full w-min px-3 rounded-xl" id="sideInfo">
+            <div className= "fixed z-10 py-2 top-4 bg-stone-300/55 backdrop-blur-sm pt-8 flex flex-col items-center justify-start h-full w-min px-3 rounded-xl" id="sideInfo">
                 <div className=" h-36 self-center">
                     <img className=" h-full rounded-xl self-center " src={img} alt="profile" />
                 </div>

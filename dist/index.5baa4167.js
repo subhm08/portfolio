@@ -27802,7 +27802,7 @@ var _projects = require("./component/Projects");
 var _s = $RefreshSig$();
 const Menu = ({ toggleProfile, toggleMenu, isProfileOpen, isMenuOpen })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: " sticky top-0 flex z-20 justify-between mb-2 w-full sm:hidden",
+        className: "  bg-transparent backdrop-blur-sm sticky top-0 z-20 flex  justify-between px-2 w-full sm:hidden bg-gray-100",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
                 class: `bi ${isProfileOpen ? "bi-x text-red-700" : "bi-person-circle"} text-3xl cursor-pointer hover:scale-110  transitionAll`,
@@ -27816,7 +27816,7 @@ const Menu = ({ toggleProfile, toggleMenu, isProfileOpen, isMenuOpen })=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                class: ` bi ${isMenuOpen ? "bi-x text-red-700 " : "bi-list"} bi-list text-3xl cursor-pointer hover:scale-110  transitionAll pr-2`,
+                class: ` bi ${isMenuOpen ? "bi-x  text-red-700 " : "bi-list"} bi-list text-3xl cursor-pointer hover:scale-110  transitionAll pr-2`,
                 id: "menu-btn",
                 onClick: ()=>{
                     toggleMenu();
@@ -27847,7 +27847,7 @@ const MainBox = ()=>{
         setProfileOpen(false); // Ensure the profile is closed when the menu is opened
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "w-screen bg-gray-100 sm:mx-6 sm:mt-24 p-3 flex flex-col  sm:h-[calc(100vh-6rem)] rounded-xl overflow-x-hidden sm:min-w-96 no-scrollbar sm:w-[calc(100vw)] ",
+        className: "w-screen bg-gray-100 sm:mx-6 sm:mt-24  flex flex-col  sm:h-[calc(100vh-6rem)] rounded-xl  sm:min-w-96 sm:w-[calc(100vw)]",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Menu, {
                 toggleProfile: toggleProfile,
@@ -27857,19 +27857,20 @@ const MainBox = ()=>{
             }, void 0, false, {
                 fileName: "src/MainBox.js",
                 lineNumber: 35,
-                columnNumber: 9
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "no-scrollbar overflow-x-auto p-3",
                 children: [
                     isProfileOpen && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {}, void 0, false, {
                         fileName: "src/MainBox.js",
-                        lineNumber: 43,
-                        columnNumber: 27
+                        lineNumber: 44,
+                        columnNumber: 28
                     }, undefined),
                     isMenuOpen && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _menuDefault.default), {}, void 0, false, {
                         fileName: "src/MainBox.js",
-                        lineNumber: 44,
-                        columnNumber: 24
+                        lineNumber: 45,
+                        columnNumber: 22
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
                         children: [
@@ -27877,20 +27878,8 @@ const MainBox = ()=>{
                                 path: "/",
                                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
                                     fileName: "src/MainBox.js",
-                                    lineNumber: 46,
-                                    columnNumber: 42
-                                }, void 0)
-                            }, void 0, false, {
-                                fileName: "src/MainBox.js",
-                                lineNumber: 46,
-                                columnNumber: 17
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                                path: "/Certification",
-                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _certificationDefault.default), {}, void 0, false, {
-                                    fileName: "src/MainBox.js",
                                     lineNumber: 47,
-                                    columnNumber: 55
+                                    columnNumber: 42
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "src/MainBox.js",
@@ -27898,11 +27887,11 @@ const MainBox = ()=>{
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                                path: "/projects",
-                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _projects.Projects), {}, void 0, false, {
+                                path: "/Certification",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _certificationDefault.default), {}, void 0, false, {
                                     fileName: "src/MainBox.js",
                                     lineNumber: 48,
-                                    columnNumber: 50
+                                    columnNumber: 55
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "src/MainBox.js",
@@ -27910,34 +27899,46 @@ const MainBox = ()=>{
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                                path: "/contect",
-                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contectDefault.default), {}, void 0, false, {
+                                path: "/projects",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _projects.Projects), {}, void 0, false, {
                                     fileName: "src/MainBox.js",
                                     lineNumber: 49,
-                                    columnNumber: 49
+                                    columnNumber: 50
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "src/MainBox.js",
                                 lineNumber: 49,
                                 columnNumber: 17
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                                path: "/contect",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contectDefault.default), {}, void 0, false, {
+                                    fileName: "src/MainBox.js",
+                                    lineNumber: 50,
+                                    columnNumber: 49
+                                }, void 0)
+                            }, void 0, false, {
+                                fileName: "src/MainBox.js",
+                                lineNumber: 50,
+                                columnNumber: 17
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/MainBox.js",
-                        lineNumber: 45,
+                        lineNumber: 46,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/MainBox.js",
-                lineNumber: 41,
+                lineNumber: 42,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/MainBox.js",
         lineNumber: 34,
-        columnNumber: 5
+        columnNumber: 9
     }, undefined);
 };
 _s(MainBox, "DAbvkBIlGSkE+wOiqiyTAPIfDew=");
@@ -35144,7 +35145,7 @@ const SideInfo = ()=>{
     side = document.getElementById("sideInfo");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "fixed z-10 py-2 top-4 bg-stone-300/55 backdrop-blur-sm flex flex-col items-center justify-start h-full w-min px-3 rounded-xl",
+            className: "fixed z-10 py-2 top-4 bg-stone-300/55 backdrop-blur-sm pt-8 flex flex-col items-center justify-start h-full w-min px-3 rounded-xl",
             id: "sideInfo",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35401,7 +35402,10 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
-const Navigation = ()=>{
+var _s = $RefreshSig$();
+const Navigation = ({ handleNavClick })=>{
+    _s();
+    const [isMenuVisible, setMenuVisible] = (0, _react.useState)(false);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "fixed  top-4 bg-stone-300/55 backdrop-blur-sm right-2 pt-10 z-10 navigation flex flex-col h-auto w-1/2 rounded-xl  gap-2 p-3 ",
         children: [
@@ -35415,30 +35419,30 @@ const Navigation = ()=>{
                                 className: "bi bi-person text-xl pr-1"
                             }, void 0, false, {
                                 fileName: "src/Menu.js",
-                                lineNumber: 9,
+                                lineNumber: 10,
                                 columnNumber: 23
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 9,
+                            lineNumber: 10,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                             children: " About"
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 10,
+                            lineNumber: 11,
                             columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Menu.js",
-                    lineNumber: 7,
+                    lineNumber: 8,
                     columnNumber: 26
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Menu.js",
-                lineNumber: 7,
+                lineNumber: 8,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35450,25 +35454,25 @@ const Navigation = ()=>{
                             className: "bi bi-file-earmark-person-fill text-xl "
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 13,
+                            lineNumber: 14,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                             children: " Certification"
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 14,
+                            lineNumber: 15,
                             columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Menu.js",
-                    lineNumber: 12,
+                    lineNumber: 13,
                     columnNumber: 39
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Menu.js",
-                lineNumber: 12,
+                lineNumber: 13,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35480,25 +35484,25 @@ const Navigation = ()=>{
                             className: "bi bi-file-earmark-code text-xl "
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 17,
+                            lineNumber: 18,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                             children: " Projects"
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 18,
+                            lineNumber: 19,
                             columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Menu.js",
-                    lineNumber: 16,
+                    lineNumber: 17,
                     columnNumber: 34
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Menu.js",
-                lineNumber: 16,
+                lineNumber: 17,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35510,34 +35514,35 @@ const Navigation = ()=>{
                             className: "bi bi-person-plus text-xl "
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 21,
+                            lineNumber: 22,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                             children: " Contect"
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 22,
+                            lineNumber: 23,
                             columnNumber: 16
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Menu.js",
-                    lineNumber: 20,
+                    lineNumber: 21,
                     columnNumber: 33
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Menu.js",
-                lineNumber: 20,
+                lineNumber: 21,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Menu.js",
-        lineNumber: 6,
+        lineNumber: 7,
         columnNumber: 9
     }, undefined);
 };
+_s(Navigation, "xvLXAuVq60X03iRnh1HUC/vns5o=");
 _c = Navigation;
 exports.default = Navigation;
 var _c;
