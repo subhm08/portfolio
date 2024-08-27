@@ -26,5 +26,12 @@
         font-family: monospace;
         font-weight: 500;
     }
+    /* Responsiveness */
+   .transitionAll{
+    transition:all ease 500ms;
+   }
+   body{
+    width: 100vw;
+   }
 
 }

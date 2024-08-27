@@ -1,38 +1,39 @@
 import React, { Fragment, useState } from "react";
 import img from '../image/Photo.jpg';
 
-// Component of our social media handle links
 export const Social = () => {
-
-    // This function open our social media link in a new page
     const openInNewTab = (url) => {
         window.open(url, "_blank", "noreferrer");
     };
-
     return (
         <div className="flex gap-1">
+
             <i onClick={() => openInNewTab("https://www.facebook.com/profile.php?id=61555265127994&mibextid=ZbWKwL")} className="bi bi-facebook cursor-pointer bg-white m-1 rounded-md px-2 py-1"></i>
+
             <i onClick={() => openInNewTab("https://www.linkedin.com/in/shubham-kumar-3b8311199?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app")} className="bi bi-linkedin cursor-pointer bg-white m-1 rounded-md px-2 py-1"></i>
+
             <i onClick={() => openInNewTab("https://github.com/subhm08")} className="bi bi-github cursor-pointer bg-white m-1 rounded-md px-2 py-1"></i>
+
             <i onClick={() => openInNewTab("https://x.com/__imSubhm?t=MwXDIEX0j635yEHXnMFwsw&s=09")} className="bi bi-twitter-x cursor-pointer bg-white m-1 rounded-md px-2 py-1"></i>
+
         </div>
     )
 }
 
-const SideInfo = (props) => {
-    // side=document.getElementById("sideInfo");
-    return (
-        <div>
-            <div className={`hidden bg-gray-200  ml-12 mt-24 px-7 sm:flex flex-col items-center h-[calc(100vh-12rem)] rounded-xl`} id="sideInfo">
-                <div className=" h-36 absolute top-4">
-                    <img className=" h-full rounded-xl " src={img} alt="profile" />
-                </div>
-                <div className="flex flex-col items-center mt-16">
-                    <p className=" font-bold text-lg tracking-wider">Shubham kumar</p>
-                    <p className=" text-sm  bg-stone-100  rounded-lg p-1">Frontend Developer</p>
-                    <Social />
-                    <div className=" bg-stone-100  px-4 py-5 my-2 rounded-xl ">
+const SideInfo = () => {
 
+    side = document.getElementById("sideInfo");
+    return (
+        <>
+            <div className= "fixed z-10 py-2 top-4 bg-stone-300/55 backdrop-blur-sm flex flex-col items-center justify-start h-full w-min px-3 rounded-xl" id="sideInfo">
+                <div className=" h-36 self-center">
+                    <img className=" h-full rounded-xl self-center " src={img} alt="profile" />
+                </div>
+                <div className="flex flex-col items-center ">
+                    <p className=" font-bold text-lg tracking-wider">Shubham kumar</p>
+                    <p className=" text-sm bg-stone-100 rounded-lg p-1">Full Stack Developer</p>
+                    <Social />
+                    <div className="  backdrop-blur-lg px-4 py-5 my-2 rounded-xl ">
                         <div className=" flex items-center gap-1 pb-2">
                             <span className="bg-white p-1 rounded-md"><i className="bi bi-phone self-start" /></span>
                             <span>
@@ -58,12 +59,13 @@ const SideInfo = (props) => {
                         </div>
 
                     </div>
-                    <div>
-                        <a className="bg-slate-800 hover:bg-slate-900 rounded-lg font-semibold text-slate-100 py-1 px-2" href="https://drive.google.com/file/d/1r5kjSowfGpJUO-izwmxzR23dZGNI0yb0/view?usp=sharing" download>Download CV<i class=" p-1 bi bi-download"></i></a>
-                    </div>
+
+                </div>
+                <div className="mt-auto mb-3 ">
+                    <a className="bg-slate-800 hover:bg-slate-900 rounded-lg font-semibold text-slate-100 py-1 px-2 " href="https://drive.google.com/file/d/1r5kjSowfGpJUO-izwmxzR23dZGNI0yb0/view?usp=sharing" download>Download CV<i class=" p-1 bi bi-download"></i></a>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 export default SideInfo

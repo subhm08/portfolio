@@ -7,9 +7,11 @@ export const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     document.getElementById("btn").value="Sending...";
+    document.getElementById("btn").disabled=true;
     emailjs.sendForm('service_2t34t2e', 'template_xfh2t89', form.current,
       'GTomUgJv9jYbnFu7C')
       .then((result) => {
+        e.target.reset();
         document.getElementById("btn").value="Send";
         console.log(result.text);
       }, (error) => {
