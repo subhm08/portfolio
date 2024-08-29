@@ -27321,7 +27321,7 @@ const SideInfo = (props)=>{
     // side=document.getElementById("sideInfo");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: `hidden bg-gray-200  ml-12 mt-24 px-7 sm:flex flex-col items-center h-[calc(100vh-12rem)] rounded-xl`,
+            className: `hidden bg-gray-200  ml-12 mt-24 px-7 md:flex flex-col items-center h-[calc(100vh-12rem)] rounded-xl`,
             id: "sideInfo",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27783,7 +27783,7 @@ $parcel$ReactRefreshHelpers$d063.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Menu", ()=>Menu);
+parcelHelpers.export(exports, "Navbar", ()=>Navbar);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -27800,12 +27800,12 @@ var _certification = require("./component/Certification");
 var _certificationDefault = parcelHelpers.interopDefault(_certification);
 var _projects = require("./component/Projects");
 var _s = $RefreshSig$();
-const Menu = ({ toggleProfile, toggleMenu, isProfileOpen, isMenuOpen })=>{
+const Navbar = ({ toggleProfile, toggleMenu, isProfileOpen, isMenuOpen })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "  bg-transparent backdrop-blur-sm sticky top-0 z-20 flex  justify-between px-2 w-full sm:hidden bg-gray-100",
+        className: "  bg-transparent backdrop-blur-sm sticky top-0 z-20 flex  justify-between px-2 w-full md:hidden bg-gray-100",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                class: `bi ${isProfileOpen ? "bi-x text-red-700" : "bi-person-circle"} text-3xl cursor-pointer hover:scale-110  transitionAll`,
+                class: `bi ${isProfileOpen ? "bi-x text-red-700" : "bi-person-circle"} text-3xl cursor-pointer hover:scale-110  transitionAll p-2`,
                 id: "profile",
                 onClick: ()=>{
                     toggleProfile();
@@ -27816,11 +27816,9 @@ const Menu = ({ toggleProfile, toggleMenu, isProfileOpen, isMenuOpen })=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                class: ` bi ${isMenuOpen ? "bi-x  text-red-700 " : "bi-list"} bi-list text-3xl cursor-pointer hover:scale-110  transitionAll pr-2`,
+                class: ` bi ${isMenuOpen ? "bi-x  text-red-700 " : "bi-list"} bi-list text-3xl cursor-pointer hover:scale-110  transitionAll p-2`,
                 id: "menu-btn",
-                onClick: ()=>{
-                    toggleMenu();
-                }
+                onClick: ()=>toggleMenu()
             }, void 0, false, {
                 fileName: "src/MainBox.js",
                 lineNumber: 14,
@@ -27833,7 +27831,7 @@ const Menu = ({ toggleProfile, toggleMenu, isProfileOpen, isMenuOpen })=>{
         columnNumber: 9
     }, undefined);
 };
-_c = Menu;
+_c = Navbar;
 const MainBox = ()=>{
     _s();
     const [isProfileOpen, setProfileOpen] = (0, _react.useState)(false);
@@ -27847,9 +27845,9 @@ const MainBox = ()=>{
         setProfileOpen(false); // Ensure the profile is closed when the menu is opened
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "w-screen bg-gray-100 sm:mx-6 sm:mt-24  flex flex-col  sm:h-[calc(100vh-6rem)] rounded-xl  sm:min-w-96 sm:w-[calc(100vw)]",
+        className: "w-screen bg-gray-100 md:mx-6 md:mt-24  flex flex-col  md:h-[calc(100vh-6rem)] rounded-xl  md:min-w-96 md:w-[calc(100vw)]",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Menu, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Navbar, {
                 toggleProfile: toggleProfile,
                 toggleMenu: toggleMenu,
                 isProfileOpen: isProfileOpen,
@@ -27864,13 +27862,13 @@ const MainBox = ()=>{
                 children: [
                     isProfileOpen && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {}, void 0, false, {
                         fileName: "src/MainBox.js",
-                        lineNumber: 44,
-                        columnNumber: 28
+                        lineNumber: 42,
+                        columnNumber: 35
                     }, undefined),
                     isMenuOpen && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _menuDefault.default), {}, void 0, false, {
                         fileName: "src/MainBox.js",
-                        lineNumber: 45,
-                        columnNumber: 22
+                        lineNumber: 43,
+                        columnNumber: 32
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
                         children: [
@@ -27878,61 +27876,61 @@ const MainBox = ()=>{
                                 path: "/",
                                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
                                     fileName: "src/MainBox.js",
-                                    lineNumber: 47,
-                                    columnNumber: 42
+                                    lineNumber: 45,
+                                    columnNumber: 46
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "src/MainBox.js",
-                                lineNumber: 47,
-                                columnNumber: 17
+                                lineNumber: 45,
+                                columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                                 path: "/Certification",
                                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _certificationDefault.default), {}, void 0, false, {
                                     fileName: "src/MainBox.js",
-                                    lineNumber: 48,
-                                    columnNumber: 55
+                                    lineNumber: 46,
+                                    columnNumber: 59
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "src/MainBox.js",
-                                lineNumber: 48,
-                                columnNumber: 17
+                                lineNumber: 46,
+                                columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                                 path: "/projects",
                                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _projects.Projects), {}, void 0, false, {
                                     fileName: "src/MainBox.js",
-                                    lineNumber: 49,
-                                    columnNumber: 50
+                                    lineNumber: 47,
+                                    columnNumber: 54
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "src/MainBox.js",
-                                lineNumber: 49,
-                                columnNumber: 17
+                                lineNumber: 47,
+                                columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                                 path: "/contect",
                                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contectDefault.default), {}, void 0, false, {
                                     fileName: "src/MainBox.js",
-                                    lineNumber: 50,
-                                    columnNumber: 49
+                                    lineNumber: 48,
+                                    columnNumber: 53
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "src/MainBox.js",
-                                lineNumber: 50,
-                                columnNumber: 17
+                                lineNumber: 48,
+                                columnNumber: 21
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/MainBox.js",
-                        lineNumber: 46,
-                        columnNumber: 13
+                        lineNumber: 44,
+                        columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/MainBox.js",
-                lineNumber: 42,
-                columnNumber: 9
+                lineNumber: 41,
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
@@ -27945,7 +27943,7 @@ _s(MainBox, "DAbvkBIlGSkE+wOiqiyTAPIfDew=");
 _c1 = MainBox;
 exports.default = MainBox;
 var _c, _c1;
-$RefreshReg$(_c, "Menu");
+$RefreshReg$(_c, "Navbar");
 $RefreshReg$(_c1, "MainBox");
 
   $parcel$ReactRefreshHelpers$d063.postlude(module);
@@ -35402,10 +35400,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
-var _s = $RefreshSig$();
-const Navigation = ({ handleNavClick })=>{
-    _s();
-    const [isMenuVisible, setMenuVisible] = (0, _react.useState)(false);
+const Navigation = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "fixed  top-4 bg-stone-300/55 backdrop-blur-sm right-2 pt-10 z-10 navigation flex flex-col h-auto w-1/2 rounded-xl  gap-2 p-3 ",
         children: [
@@ -35419,30 +35414,30 @@ const Navigation = ({ handleNavClick })=>{
                                 className: "bi bi-person text-xl pr-1"
                             }, void 0, false, {
                                 fileName: "src/Menu.js",
-                                lineNumber: 10,
+                                lineNumber: 9,
                                 columnNumber: 23
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 10,
+                            lineNumber: 9,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                             children: " About"
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 11,
+                            lineNumber: 10,
                             columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Menu.js",
-                    lineNumber: 8,
+                    lineNumber: 7,
                     columnNumber: 26
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Menu.js",
-                lineNumber: 8,
+                lineNumber: 7,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35451,28 +35446,28 @@ const Navigation = ({ handleNavClick })=>{
                     className: " bg-white rounded-lg p-2 text-sm font-semibold w-full flex items-center cursor-pointer",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                            className: "bi bi-file-earmark-person-fill text-xl "
+                            className: "bi bi-file-earmark-person-fill text-xl pr-1"
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 14,
+                            lineNumber: 13,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                             children: " Certification"
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 15,
+                            lineNumber: 14,
                             columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Menu.js",
-                    lineNumber: 13,
+                    lineNumber: 12,
                     columnNumber: 39
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Menu.js",
-                lineNumber: 13,
+                lineNumber: 12,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35481,28 +35476,28 @@ const Navigation = ({ handleNavClick })=>{
                     className: " bg-white rounded-lg p-2 text-sm font-semibold w-full flex items-center cursor-pointer",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                            className: "bi bi-file-earmark-code text-xl "
+                            className: "bi bi-file-earmark-code text-xl pr-1"
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 18,
+                            lineNumber: 17,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                             children: " Projects"
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 19,
+                            lineNumber: 18,
                             columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Menu.js",
-                    lineNumber: 17,
+                    lineNumber: 16,
                     columnNumber: 34
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Menu.js",
-                lineNumber: 17,
+                lineNumber: 16,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35511,38 +35506,37 @@ const Navigation = ({ handleNavClick })=>{
                     className: " bg-white rounded-lg p-2 text-sm font-semibold w-full flex items-center cursor-pointer",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                            className: "bi bi-person-plus text-xl "
+                            className: "bi bi-person-plus text-xl pr-1"
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 22,
+                            lineNumber: 21,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                             children: " Contect"
                         }, void 0, false, {
                             fileName: "src/Menu.js",
-                            lineNumber: 23,
+                            lineNumber: 22,
                             columnNumber: 16
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Menu.js",
-                    lineNumber: 21,
+                    lineNumber: 20,
                     columnNumber: 33
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Menu.js",
-                lineNumber: 21,
+                lineNumber: 20,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Menu.js",
-        lineNumber: 7,
+        lineNumber: 6,
         columnNumber: 9
     }, undefined);
 };
-_s(Navigation, "xvLXAuVq60X03iRnh1HUC/vns5o=");
 _c = Navigation;
 exports.default = Navigation;
 var _c;
@@ -36745,7 +36739,7 @@ var _projects = require("./component/Projects");
 var _reactRouterDom = require("react-router-dom");
 const Navigation = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "hidden navigation bg-gray-200 sm:mr-12 sm:mt-24 px-3 py-8 sm:flex flex-col h-fit w-auto rounded-xl gap-2 justify-between",
+        className: "hidden navigation bg-gray-200 md:mr-12 md:mt-24 px-3 py-8 md:flex flex-col h-fit w-auto rounded-xl gap-2 justify-between",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                 to: "/",

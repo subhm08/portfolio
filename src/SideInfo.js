@@ -23,7 +23,7 @@ const SideInfo = (props) => {
     // side=document.getElementById("sideInfo");
     return (
         <div>
-            <div className={`hidden bg-gray-200  ml-12 mt-24 px-7 sm:flex flex-col items-center h-[calc(100vh-12rem)] rounded-xl`} id="sideInfo">
+            <div className={`hidden bg-gray-200  ml-12 mt-24 px-7 md:flex flex-col items-center h-[calc(100vh-12rem)] rounded-xl`} id="sideInfo">
                 <div className=" h-36 absolute top-4">
                     <img className=" h-full rounded-xl " src={img} alt="profile" />
                 </div>

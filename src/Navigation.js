@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Navigation = () => {
     return (
-        <div className="hidden navigation bg-gray-200 sm:mr-12 sm:mt-24 px-3 py-8 sm:flex flex-col h-fit w-auto rounded-xl gap-2 justify-between">
+        <div className="hidden navigation bg-gray-200 md:mr-12 md:mt-24 px-3 py-8 md:flex flex-col h-fit w-auto rounded-xl gap-2 justify-between">
             <Link to="/"><button
                 className=" bg-white rounded-lg p-2 text-sm font-semibold w-full ">
                 <i className="bi bi-person text-xl block" />
